@@ -1,0 +1,164 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff3e0;
+    color: #5e503f;
+    max-width: 800px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h1, h2, h3 {
+    color: #6a329f;
+}
+
+.uploadForm, #recipesSection {
+    background-color: #ffcc80;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#recipeImage {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+
+    border-radius: 10px;
+}
+
+#ingredients, #instructions {
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#ingredients:before {
+    content: "Ingredients:";
+    font-weight: bold; /* Make the prefix bold */
+}
+
+#instructions:before {
+    content: "Instructions:";
+    font-weight: bold; /* Make the prefix bold */
+}
+
+ul {
+    text-align: left; /* Align list to the left */
+    padding-left: 20px; /* Indent list items */
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+#spinnerOverlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+}
+.spinner {
+    border: 4px solid #f3e5f5;
+    border-top: 4px solid #bf360c;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+.center {
+    display: block;
+    margin: 20px auto; /* Center align and add vertical spacing */
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.spinner-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 25% auto;
+    animation: spin 2s linear infinite;
+    /*background-color: rgba(76, 34, 147, 0.38);*/
+    background-color: rgba(51, 47, 41, 0.11);
+    border-radius: 60%;
+}
+.icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(148, 94, 55, 0.63);
+        opacity: 1;
+        filter: invert(100%);
+
+}
+
+.icon1 { top: 0; left: 0; }
+.icon2 { top: 0; right: 0; }
+.icon3 { bottom: 0; left: 0; }
+.icon4 { bottom: 0; right: 0; }
+
+.icon1 {
+    animation: absorb1 3s infinite linear; /* Individual animation */
+}
+.icon2 {
+    animation: absorb2 3s infinite linear; /* Individual animation */
+}
+.icon3 {
+    animation: absorb3 3s infinite linear; /* Individual animation */
+}
+.icon4 {
+    animation: absorb4 3s infinite linear; /* Individual animation */
+}
+
+
+
+@keyframes absorb {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5) translate(20px, 20px); /* Adjust translation */
+        opacity: 0.5;
+    }
+}
+
+/* Individual animations for icons */
+@keyframes absorb1 {
+    0%, 100% { transform: scale(0.5); }
+    50% { transform: scale(1) translate(-10px, -10px); opacity: 0.5; }
+}
+@keyframes absorb2 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.6) translate(10px, -10px); opacity: 0.5; }
+}
+@keyframes absorb3 {
+    0%, 100% { transform: scale(0.4); }
+    50% { transform: scale(1) translate(-10px, 10px); opacity: 0.5; }
+}
+@keyframes absorb4 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.7) translate(10px, 10px); opacity: 0.5; }
+}
+

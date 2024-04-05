@@ -1,0 +1,33 @@
+{
+    "ijzepeda": {
+        "whitelist": [
+            "Generic Recipe 1"
+        ],
+        "blacklist": [
+            "Pineapple Pizza"
+        ],
+        "diet": [
+            "Non Vegan"
+        ],
+        "allergies": [
+            "nuts",
+            "almond"
+        ]
+    },
+    "Tehehe": {
+        "whitelist": [
+            "Item4"
+        ],
+        "blacklist": [
+            "Item5",
+            "Item6"
+        ],
+        "diet_restriction": [
+            "Gluten-Free"
+        ],
+        "allergies": [
+            "wheat",
+            "pasta"
+        ]
+    }
+}

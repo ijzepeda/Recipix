@@ -1,0 +1,532 @@
+tiempo de ejecucion 25hrs 24mins
+
+
+Epoch 1/50
+1083/1083 [==============================] - 3204s 3s/step - loss: 2.0695 - accuracy: 0.4756 - val_loss: 1.2442 - val_accuracy: 0.6574
+Epoch 2/50
+1083/1083 [==============================] - 3214s 3s/step - loss: 1.4766 - accuracy: 0.5966 - val_loss: 1.1302 - val_accuracy: 0.6909
+Epoch 3/50
+1083/1083 [==============================] - 3373s 3s/step - loss: 1.3553 - accuracy: 0.6280 - val_loss: 1.0445 - val_accuracy: 0.7084
+Epoch 4/50
+1083/1083 [==============================] - 3283s 3s/step - loss: 1.2725 - accuracy: 0.6497 - val_loss: 1.0134 - val_accuracy: 0.7210
+Epoch 5/50
+1083/1083 [==============================] - 3177s 3s/step - loss: 1.1928 - accuracy: 0.6681 - val_loss: 0.9828 - val_accuracy: 0.7269
+Epoch 6/50
+1083/1083 [==============================] - 3145s 3s/step - loss: 1.1505 - accuracy: 0.6772 - val_loss: 1.0070 - val_accuracy: 0.7291
+Epoch 7/50
+1083/1083 [==============================] - 3142s 3s/step - loss: 1.1186 - accuracy: 0.6850 - val_loss: 0.9469 - val_accuracy: 0.7409
+Epoch 8/50
+1083/1083 [==============================] - 3133s 3s/step - loss: 1.0926 - accuracy: 0.6954 - val_loss: 0.9305 - val_accuracy: 0.7495
+Epoch 9/50
+1083/1083 [==============================] - 3191s 3s/step - loss: 1.0533 - accuracy: 0.7016 - val_loss: 0.9066 - val_accuracy: 0.7522
+Epoch 10/50
+1083/1083 [==============================] - 3193s 3s/step - loss: 1.0344 - accuracy: 0.7095 - val_loss: 0.9624 - val_accuracy: 0.7359
+Epoch 11/50
+1083/1083 [==============================] - 3147s 3s/step - loss: 1.0129 - accuracy: 0.7127 - val_loss: 0.8929 - val_accuracy: 0.7592
+Epoch 12/50
+1083/1083 [==============================] - 3157s 3s/step - loss: 0.9842 - accuracy: 0.7209 - val_loss: 0.8940 - val_accuracy: 0.7600
+Epoch 13/50
+1083/1083 [==============================] - 3146s 3s/step - loss: 0.9663 - accuracy: 0.7287 - val_loss: 0.9086 - val_accuracy: 0.7584
+Epoch 14/50
+1083/1083 [==============================] - 3136s 3s/step - loss: 0.9465 - accuracy: 0.7318 - val_loss: 0.8779 - val_accuracy: 0.7645
+Epoch 15/50
+1083/1083 [==============================] - 3141s 3s/step - loss: 0.9413 - accuracy: 0.7308 - val_loss: 0.8829 - val_accuracy: 0.7637
+Epoch 16/50
+1083/1083 [==============================] - 3135s 3s/step - loss: 0.9343 - accuracy: 0.7348 - val_loss: 0.8732 - val_accuracy: 0.7668
+Epoch 17/50
+1083/1083 [==============================] - 3140s 3s/step - loss: 0.9302 - accuracy: 0.7367 - val_loss: 0.8801 - val_accuracy: 0.7692
+Epoch 18/50
+1083/1083 [==============================] - 3135s 3s/step - loss: 0.9035 - accuracy: 0.7424 - val_loss: 0.8738 - val_accuracy: 0.7779
+Epoch 19/50
+1083/1083 [==============================] - 3135s 3s/step - loss: 0.8936 - accuracy: 0.7447 - val_loss: 0.8504 - val_accuracy: 0.7786
+Epoch 20/50
+1083/1083 [==============================] - 3096s 3s/step - loss: 0.8829 - accuracy: 0.7505 - val_loss: 0.8632 - val_accuracy: 0.7760
+Epoch 21/50
+1083/1083 [==============================] - 3179s 3s/step - loss: 0.8870 - accuracy: 0.7476 - val_loss: 0.9005 - val_accuracy: 0.7737
+Epoch 22/50
+1083/1083 [==============================] - 3156s 3s/step - loss: 0.8663 - accuracy: 0.7537 - val_loss: 0.9024 - val_accuracy: 0.7758
+Epoch 23/50
+1083/1083 [==============================] - 3153s 3s/step - loss: 0.8759 - accuracy: 0.7535 - val_loss: 0.8721 - val_accuracy: 0.7772
+Epoch 24/50
+1083/1083 [==============================] - 3142s 3s/step - loss: 0.8598 - accuracy: 0.7569 - val_loss: 0.8933 - val_accuracy: 0.7794
+Epoch 25/50
+1083/1083 [==============================] - 3075s 3s/step - loss: 0.8413 - accuracy: 0.7595 - val_loss: 0.9027 - val_accuracy: 0.7872
+Epoch 26/50
+1083/1083 [==============================] - 3072s 3s/step - loss: 0.8484 - accuracy: 0.7605 - val_loss: 0.9005 - val_accuracy: 0.7823
+Epoch 27/50
+1083/1083 [==============================] - 3068s 3s/step - loss: 0.8333 - accuracy: 0.7646 - val_loss: 0.9163 - val_accuracy: 0.7847
+Epoch 28/50
+1083/1083 [==============================] - 3073s 3s/step - loss: 0.8320 - accuracy: 0.7650 - val_loss: 0.8882 - val_accuracy: 0.7880
+Epoch 29/50
+1083/1083 [==============================] - 3107s 3s/step - loss: 0.8314 - accuracy: 0.7672 - val_loss: 0.9109 - val_accuracy: 0.7818
+Epoch 29: early stopping
+
+
+
+
+
+
+
+
+
+
+
+
+Model evaluate"
+
+
+Found 11738 images belonging to 88 classes.
+367/367 [==============================] - 901s 2s/step - loss: 0.8411 - accuracy: 0.8105
+Test Loss: 0.8410724997520447
+Test Accuracy: 0.810529887676239
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEST FILES
+
+
+
+1/1 [==============================] - 0s 120ms/step
+Image: ./FOOD/test\apple\apple__008fc187.jpg
+✅CorrectPredicted class: 35 apple
+Correct:1. Incorrect:0
+1/1 [==============================] - 0s 124ms/step
+Image: ./FOOD/test\apple\apple__47b7877f.jpg
+✅CorrectPredicted class: 35 apple
+Correct:2. Incorrect:0
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\apple\apple__a82cb851.jpg
+✅CorrectPredicted class: 35 apple
+Correct:3. Incorrect:0
+1/1 [==============================] - 0s 133ms/step
+Image: ./FOOD/test\Artichoke\Artichoke__06d7c6a2.jpg
+✅CorrectPredicted class: 0 Artichoke
+Correct:4. Incorrect:0
+1/1 [==============================] - 0s 124ms/step
+Image: ./FOOD/test\Artichoke\Artichoke__811ca008.jpg
+✅CorrectPredicted class: 0 Artichoke
+Correct:5. Incorrect:0
+1/1 [==============================] - 0s 117ms/step
+Image: ./FOOD/test\asparagus\asparagus__06f5d2c6.jpg
+✅CorrectPredicted class: 36 asparagus
+Correct:6. Incorrect:0
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\asparagus\asparagus__516a314b.jpg
+✅CorrectPredicted class: 36 asparagus
+Correct:7. Incorrect:0
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\asparagus\asparagus__9fac27c5.jpg
+✅CorrectPredicted class: 36 asparagus
+Correct:8. Incorrect:0
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\asparagus\asparagus__e7010949.jpg
+✅CorrectPredicted class: 36 asparagus
+Correct:9. Incorrect:0
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\Avocado\Avocado__7bfc75a6.jpg
+✅CorrectPredicted class: 1 Avocado
+Correct:10. Incorrect:0
+1/1 [==============================] - 0s 120ms/step
+Image: ./FOOD/test\Bacon\Bacon__0339a005.jpg
+✅CorrectPredicted class: 2 Bacon
+Correct:11. Incorrect:0
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\Bacon\Bacon__5543b342.jpg
+✅CorrectPredicted class: 2 Bacon
+Correct:12. Incorrect:0
+1/1 [==============================] - 0s 113ms/step
+Image: ./FOOD/test\Bacon\Bacon__b3b656ca.jpg
+✅CorrectPredicted class: 2 Bacon
+Correct:13. Incorrect:0
+1/1 [==============================] - 0s 124ms/step
+Image: ./FOOD/test\Banana\Banana__1945dff6.jpg
+✅CorrectPredicted class: 3 Banana
+Correct:14. Incorrect:0
+1/1 [==============================] - 0s 112ms/step
+Image: ./FOOD/test\Beans\Beans__11c62ded.jpg
+✅CorrectPredicted class: 4 Beans
+Correct:15. Incorrect:0
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\Beans\Beans__6945c9e2.jpg
+✅CorrectPredicted class: 4 Beans
+Correct:16. Incorrect:0
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\Beans\Beans__b152ebaf.jpg
+✅CorrectPredicted class: 4 Beans
+Correct:17. Incorrect:0
+1/1 [==============================] - 0s 122ms/step
+Image: ./FOOD/test\beef meat\beef meat__132baf48.jpg
+❌IncorrectPredicted class: 24 Meat
+Correct:17. Incorrect:1
+1/1 [==============================] - 0s 114ms/step
+Image: ./FOOD/test\beef meat\beef meat__b04e6af8.jpg
+❌IncorrectPredicted class: 24 Meat
+Correct:17. Incorrect:2
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\Beetroot\Beetroot__29f1d087.jpg
+✅CorrectPredicted class: 5 Beetroot
+Correct:18. Incorrect:2
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\Beetroot\Beetroot__83827c26.jpg
+✅CorrectPredicted class: 5 Beetroot
+Correct:19. Incorrect:2
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\Beetroot\Beetroot__e577b680.jpg
+✅CorrectPredicted class: 5 Beetroot
+Correct:20. Incorrect:2
+1/1 [==============================] - 0s 114ms/step
+Image: ./FOOD/test\bell pepper\bell pepper__6eddbca9.jpg
+✅CorrectPredicted class: 38 bell pepper
+Correct:21. Incorrect:2
+1/1 [==============================] - 0s 117ms/step
+Image: ./FOOD/test\Bitter Gourd\Bitter Gourd__16d78054.jpg
+✅CorrectPredicted class: 6 Bitter Gourd
+Correct:22. Incorrect:2
+1/1 [==============================] - 0s 117ms/step
+Image: ./FOOD/test\black beans\black beans__aac3b147.jpg
+❌IncorrectPredicted class: 67 pasta
+Correct:22. Incorrect:3
+1/1 [==============================] - 0s 114ms/step
+Image: ./FOOD/test\blueberries\blueberries__7179bc57.jpg
+✅CorrectPredicted class: 40 blueberries
+Correct:23. Incorrect:3
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\Broccoli\Broccoli__127bbcdd.jpg
+✅CorrectPredicted class: 8 Broccoli
+Correct:24. Incorrect:3
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\Broccoli\Broccoli__bdec6881.jpg
+✅CorrectPredicted class: 8 Broccoli
+Correct:25. Incorrect:3
+1/1 [==============================] - 0s 114ms/step
+Image: ./FOOD/test\Butter\Butter__85b23d33.jpg
+✅CorrectPredicted class: 9 Butter
+Correct:26. Incorrect:3
+1/1 [==============================] - 0s 117ms/step
+Image: ./FOOD/test\Cabbage\Cabbage__31fe5747.jpg
+✅CorrectPredicted class: 10 Cabbage
+Correct:27. Incorrect:3
+1/1 [==============================] - 0s 133ms/step
+Image: ./FOOD/test\Cabbage\Cabbage__c163856d.jpg
+✅CorrectPredicted class: 10 Cabbage
+Correct:28. Incorrect:3
+1/1 [==============================] - 0s 111ms/step
+Image: ./FOOD/test\cambray\cambray__91611d18.jpg
+✅CorrectPredicted class: 41 cambray
+Correct:29. Incorrect:3
+1/1 [==============================] - 0s 119ms/step
+Image: ./FOOD/test\cantaloupe\cantaloupe__6979fce2.jpg
+✅CorrectPredicted class: 42 cantaloupe
+Correct:30. Incorrect:3
+1/1 [==============================] - 0s 113ms/step
+Image: ./FOOD/test\carrots\carrots__d0f974eb.jpg
+✅CorrectPredicted class: 43 carrots
+Correct:31. Incorrect:3
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\Cauliflower\Cauliflower__c8b39a81.jpg
+✅CorrectPredicted class: 11 Cauliflower
+Correct:32. Incorrect:3
+1/1 [==============================] - 0s 117ms/step
+Image: ./FOOD/test\celery\celery__fc559f6b.jpg
+✅CorrectPredicted class: 44 celery
+Correct:33. Incorrect:3
+1/1 [==============================] - 0s 113ms/step
+Image: ./FOOD/test\Cheese\Cheese__25fa49f6.jpg
+✅CorrectPredicted class: 12 Cheese
+Correct:34. Incorrect:3
+1/1 [==============================] - 0s 125ms/step
+Image: ./FOOD/test\Cheese\Cheese__c50a55b3.jpg
+✅CorrectPredicted class: 12 Cheese
+Correct:35. Incorrect:3
+1/1 [==============================] - 0s 110ms/step
+Image: ./FOOD/test\cherries\cherries__880df898.jpg
+✅CorrectPredicted class: 46 cherries
+Correct:36. Incorrect:3
+1/1 [==============================] - 0s 111ms/step
+Image: ./FOOD/test\Chicken\Chicken__7db6338f.jpg
+✅CorrectPredicted class: 13 Chicken
+Correct:37. Incorrect:3
+1/1 [==============================] - 0s 124ms/step
+Image: ./FOOD/test\Chickpeas\Chickpeas__799d8810.jpg
+✅CorrectPredicted class: 14 Chickpeas
+Correct:38. Incorrect:3
+1/1 [==============================] - 0s 112ms/step
+Image: ./FOOD/test\chilli pepper\chilli pepper__293572ad.jpg
+❌IncorrectPredicted class: 56 jalapeno
+Correct:38. Incorrect:4
+1/1 [==============================] - 0s 126ms/step
+Image: ./FOOD/test\cilantro\cilantro__99c55727.jpg
+✅CorrectPredicted class: 48 cilantro
+Correct:39. Incorrect:4
+1/1 [==============================] - 0s 119ms/step
+Image: ./FOOD/test\Cucumber\Cucumber__02840af0.jpg
+✅CorrectPredicted class: 17 Cucumber
+Correct:40. Incorrect:4
+1/1 [==============================] - 0s 135ms/step
+Image: ./FOOD/test\Cucumber\Cucumber__a9a2cfe9.jpg
+✅CorrectPredicted class: 17 Cucumber
+Correct:41. Incorrect:4
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\eggplant\eggplant__532e6a65.jpg
+✅CorrectPredicted class: 49 eggplant
+Correct:42. Incorrect:4
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\eggplant\eggplant__dda1bd18.jpg
+✅CorrectPredicted class: 49 eggplant
+Correct:43. Incorrect:4
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\eggs\eggs__88c8cecd.jpg
+✅CorrectPredicted class: 50 eggs
+Correct:44. Incorrect:4
+1/1 [==============================] - 0s 113ms/step
+Image: ./FOOD/test\fish\fish__4952c339.jpg
+✅CorrectPredicted class: 51 fish
+Correct:45. Incorrect:4
+1/1 [==============================] - 0s 110ms/step
+Image: ./FOOD/test\Garlic\Garlic__321a39f6.jpg
+✅CorrectPredicted class: 18 Garlic
+Correct:46. Incorrect:4
+1/1 [==============================] - 0s 119ms/step
+Image: ./FOOD/test\Ginger\Ginger__a966f897.jpg
+✅CorrectPredicted class: 19 Ginger
+Correct:47. Incorrect:4
+1/1 [==============================] - 0s 139ms/step
+Image: ./FOOD/test\Gourd\Gourd__7f769089.jpg
+✅CorrectPredicted class: 20 Gourd
+Correct:48. Incorrect:4
+1/1 [==============================] - 0s 106ms/step
+Image: ./FOOD/test\grapefruit\grapefruit__524b6c2b.jpg
+✅CorrectPredicted class: 52 grapefruit
+Correct:49. Incorrect:4
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\grapes\grapes__127327ba.jpg
+✅CorrectPredicted class: 53 grapes
+Correct:50. Incorrect:4
+1/1 [==============================] - 0s 113ms/step
+Image: ./FOOD/test\grapes\grapes__c3580d72.jpg
+✅CorrectPredicted class: 53 grapes
+Correct:51. Incorrect:4
+1/1 [==============================] - 0s 117ms/step
+Image: ./FOOD/test\green beans\green beans__61b82b36.jpg
+✅CorrectPredicted class: 54 green beans
+Correct:52. Incorrect:4
+1/1 [==============================] - 0s 121ms/step
+Image: ./FOOD/test\Ground Meat\Ground Meat__09b97ed9.jpg
+✅CorrectPredicted class: 21 Ground Meat
+Correct:53. Incorrect:4
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\Ground Meat\Ground Meat__b09c86e5.jpg
+✅CorrectPredicted class: 21 Ground Meat
+Correct:54. Incorrect:4
+1/1 [==============================] - 0s 134ms/step
+Image: ./FOOD/test\guava\guava__747102f8.jpg
+✅CorrectPredicted class: 55 guava
+Correct:55. Incorrect:4
+1/1 [==============================] - 0s 108ms/step
+Image: ./FOOD/test\Ham\Ham__1b3cd3b4.jpg
+✅CorrectPredicted class: 22 Ham
+Correct:56. Incorrect:4
+1/1 [==============================] - 0s 114ms/step
+Image: ./FOOD/test\Ham\Ham__aeea3996.jpg
+❌IncorrectPredicted class: 0 Artichoke
+Correct:56. Incorrect:5
+1/1 [==============================] - 0s 125ms/step
+Image: ./FOOD/test\jalapeno\jalapeno__99b5d1c0.jpg
+✅CorrectPredicted class: 56 jalapeno
+Correct:57. Incorrect:5
+1/1 [==============================] - 0s 120ms/step
+Image: ./FOOD/test\juice bottle\juice bottle__64a7acc0.jpg
+✅CorrectPredicted class: 57 juice bottle
+Correct:58. Incorrect:5
+1/1 [==============================] - 0s 124ms/step
+Image: ./FOOD/test\kimchi\kimchi__24c7bf3d.jpg
+✅CorrectPredicted class: 58 kimchi
+Correct:59. Incorrect:5
+1/1 [==============================] - 0s 114ms/step
+Image: ./FOOD/test\kiwi\kiwi__41eed431.jpg
+✅CorrectPredicted class: 59 kiwi
+Correct:60. Incorrect:5
+1/1 [==============================] - 0s 128ms/step
+Image: ./FOOD/test\kiwi\kiwi__e3009a9a.jpg
+✅CorrectPredicted class: 59 kiwi
+Correct:61. Incorrect:5
+1/1 [==============================] - 0s 119ms/step
+Image: ./FOOD/test\lemon\lemon__a990a33b.jpg
+❌IncorrectPredicted class: 79 spaggethi
+Correct:61. Incorrect:6
+1/1 [==============================] - 0s 120ms/step
+Image: ./FOOD/test\Lentils\Lentils__364f1b42.jpg
+❌IncorrectPredicted class: 4 Beans
+Correct:61. Incorrect:7
+1/1 [==============================] - 0s 117ms/step
+Image: ./FOOD/test\Lentils\Lentils__aae465d5.jpg
+✅CorrectPredicted class: 23 Lentils
+Correct:62. Incorrect:7
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\lettuce\lettuce__2c8fa1ed.jpg
+✅CorrectPredicted class: 61 lettuce
+Correct:63. Incorrect:7
+1/1 [==============================] - 0s 114ms/step
+Image: ./FOOD/test\lettuce\lettuce__be6b77f0.jpg
+✅CorrectPredicted class: 61 lettuce
+Correct:64. Incorrect:7
+1/1 [==============================] - 0s 112ms/step
+Image: ./FOOD/test\lime\lime__b380501c.jpg
+✅CorrectPredicted class: 62 lime
+Correct:65. Incorrect:7
+1/1 [==============================] - 0s 130ms/step
+Image: ./FOOD/test\mac&cheese\mac&cheese__8b37cf64.jpg
+✅CorrectPredicted class: 63 mac&cheese
+Correct:66. Incorrect:7
+1/1 [==============================] - 0s 112ms/step
+Image: ./FOOD/test\mango\mango__6fefe961.jpg
+✅CorrectPredicted class: 64 mango
+Correct:67. Incorrect:7
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\Meat\Meat__76dee7cd.jpg
+❌IncorrectPredicted class: 37 beef meat
+Correct:67. Incorrect:8
+1/1 [==============================] - 0s 119ms/step
+Image: ./FOOD/test\Milk\Milk__4cb7b51c.jpg
+✅CorrectPredicted class: 25 Milk
+Correct:68. Incorrect:8
+1/1 [==============================] - 0s 117ms/step
+Image: ./FOOD/test\Milk\Milk__e5d0fcb5.jpg
+✅CorrectPredicted class: 25 Milk
+Correct:69. Incorrect:8
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\Mushroom\Mushroom__c4f7ac06.jpg
+✅CorrectPredicted class: 26 Mushroom
+Correct:70. Incorrect:8
+1/1 [==============================] - 0s 113ms/step
+Image: ./FOOD/test\okra\okra__c0b16c38.jpg
+❌IncorrectPredicted class: 74 potatoes
+Correct:70. Incorrect:9
+1/1 [==============================] - 0s 122ms/step
+Image: ./FOOD/test\Onion\Onion__bc388b91.jpg
+❌IncorrectPredicted class: 12 Cheese
+Correct:70. Incorrect:10
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\Paneer\Paneer__1394ded1.jpg
+✅CorrectPredicted class: 29 Paneer
+Correct:71. Incorrect:10
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\Papaya\Papaya__a528cc92.jpg
+✅CorrectPredicted class: 30 Papaya
+Correct:72. Incorrect:10
+1/1 [==============================] - 0s 120ms/step
+Image: ./FOOD/test\paprika\paprika__99a5615e.jpg
+✅CorrectPredicted class: 66 paprika
+Correct:73. Incorrect:10
+1/1 [==============================] - 0s 113ms/step
+Image: ./FOOD/test\pasta\pasta__3f113677.jpg
+✅CorrectPredicted class: 67 pasta
+Correct:74. Incorrect:10
+1/1 [==============================] - 0s 118ms/step
+Image: ./FOOD/test\peach\peach__08246a32.jpg
+✅CorrectPredicted class: 68 peach
+Correct:75. Incorrect:10
+1/1 [==============================] - 0s 121ms/step
+Image: ./FOOD/test\peach\peach__dbddacbc.jpg
+✅CorrectPredicted class: 68 peach
+Correct:76. Incorrect:10
+1/1 [==============================] - 0s 120ms/step
+Image: ./FOOD/test\pear\pear__9cbf74fc.jpg
+✅CorrectPredicted class: 69 pear
+Correct:77. Incorrect:10
+1/1 [==============================] - 0s 106ms/step
+Image: ./FOOD/test\peas\peas__56de2d6a.jpg
+✅CorrectPredicted class: 70 peas
+Correct:78. Incorrect:10
+1/1 [==============================] - 0s 129ms/step
+Image: ./FOOD/test\pineapple\pineapple__04e6bdcb.jpg
+✅CorrectPredicted class: 71 pineapple
+Correct:79. Incorrect:10
+1/1 [==============================] - 0s 113ms/step
+Image: ./FOOD/test\pineapple\pineapple__b3f3ee15.jpg
+✅CorrectPredicted class: 71 pineapple
+Correct:80. Incorrect:10
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\plums\plums__560a724f.jpg
+✅CorrectPredicted class: 72 plums
+Correct:81. Incorrect:10
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\pomegranate\pomegranate__1d3238ac.jpg
+✅CorrectPredicted class: 73 pomegranate
+Correct:82. Incorrect:10
+1/1 [==============================] - 0s 133ms/step
+Image: ./FOOD/test\pomegranate\pomegranate__d636f401.jpg
+✅CorrectPredicted class: 73 pomegranate
+Correct:83. Incorrect:10
+1/1 [==============================] - 0s 124ms/step
+Image: ./FOOD/test\potatoes\potatoes__bb78bcde.jpg
+❌IncorrectPredicted class: 12 Cheese
+Correct:83. Incorrect:11
+1/1 [==============================] - 0s 121ms/step
+Image: ./FOOD/test\raspberries\raspberries__5ecea54c.jpg
+✅CorrectPredicted class: 75 raspberries
+Correct:84. Incorrect:11
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\rice\rice__351959fe.jpg
+✅CorrectPredicted class: 76 rice
+Correct:85. Incorrect:11
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\salmon\salmon__13c08aa6.jpg
+✅CorrectPredicted class: 77 salmon
+Correct:86. Incorrect:11
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\salmon\salmon__c17e3632.jpg
+❌IncorrectPredicted class: 51 fish
+Correct:86. Incorrect:12
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\spaggethi\spaggethi__3cdbd6b5.jpg
+✅CorrectPredicted class: 79 spaggethi
+Correct:87. Incorrect:12
+1/1 [==============================] - 0s 132ms/step
+Image: ./FOOD/test\spinach\spinach__08817c3d.jpg
+❌IncorrectPredicted class: 61 lettuce
+Correct:87. Incorrect:13
+1/1 [==============================] - 0s 112ms/step
+Image: ./FOOD/test\strawberries\strawberries__5b06ca92.jpg
+✅CorrectPredicted class: 81 strawberries
+Correct:88. Incorrect:13
+1/1 [==============================] - 0s 119ms/step
+Image: ./FOOD/test\Sweet Potato\Sweet Potato__37999a1d.jpg
+✅CorrectPredicted class: 32 Sweet Potato
+Correct:89. Incorrect:13
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\tangerine\tangerine__815bef8e.jpg
+❌IncorrectPredicted class: 68 peach
+Correct:89. Incorrect:14
+1/1 [==============================] - 0s 116ms/step
+Image: ./FOOD/test\Tomato\Tomato__f5470040.jpg
+✅CorrectPredicted class: 33 Tomato
+Correct:90. Incorrect:14
+1/1 [==============================] - 0s 115ms/step
+Image: ./FOOD/test\watermelon\watermelon__81eca825.jpg
+✅CorrectPredicted class: 84 watermelon
+Correct:91. Incorrect:14
+1/1 [==============================] - 0s 119ms/step
+Image: ./FOOD/test\yam\yam__59bf3972.jpg
+✅CorrectPredicted class: 85 yam
+Correct:92. Incorrect:14
+1/1 [==============================] - 0s 128ms/step
+Image: ./FOOD/test\yogurth\yogurth__90a5978f.jpg
+✅CorrectPredicted class: 86 yogurth
+Correct:93. Incorrect:14
+1/1 [==============================] - 0s 114ms/step
+Image: ./FOOD/test\zuccini\zuccini__9ee84131.jpg
+✅CorrectPredicted class: 87 zuccini
+Correct:94. Incorrect:14

@@ -1,0 +1,101 @@
+# Python version
+# Python=3.8.10
+
+# Packages
+matplotlib
+
+numpy
+pandas
+
+
+#torch==1.8.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+#torchvision==0.9.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+#tensorflow==2.4.1
+#torch==1.8.1
+#torchvision==0.9.1
+#tensorflow==2.4.1
+#opencv-python==4.5.1.48
+torch 
+#pytorch
+torchvision 
+torchaudio
+tensorflow
+#opencv-python #< This wont work
+# pip uninstall opencv-python
+
+#this works on MAC
+#conda install -c conda-forge opencv
+#pip install opencv-python==4.6.0.66  #<<<<<<<<<<<<<<<<<<<<<<<<<<<< KEY ELEMENT
+#opencv 
+
+
+
+#opencv-python==4.5.1.48
+#torch-cpu
+#pytorch-cpu
+#torchvision-cpu 
+#-c pytorch
+#pip install torch==1.8.1+cpu torchvision==0.9.1+cpu -f # https://download.pytorch.org/whl/torch_stable.html
+#pip install git+https://github.com/openai/whisper.git 
+
+#Others
+ffmpeg
+toml
+python-telegram-bot
+openai
+openai-whisper
+#pip install --upgrade --no-deps --force-reinstall git+https://github.com/openai/whisper.git
+#pip install --upgrade --no-deps --force-reinstall git+https://github.com/ijzepeda-LC/openai-whisper.git
+
+#git+https://github.com/ijzepeda-LC/openai-whisper.git
+
+#https://github.com/ijzepeda-LC/openai-whisper.git
+#git@github.com:ijzepeda-LC/openai-whisper.git
+
+
+
+#conda install -c conda-forge ffmpeg
+
+#cuda -c nvidia/label/cuda-11.8.0
+#pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+
+# Note:
+# - PyTorch CPU-only version is specified by +cpu in the version number.
+# - The -f https://download.pytorch.org/whl/torch_stable.html is necessary for PyTorch and torchvision to
+#   indicate to pip where to find these CPU-specific wheels. This line is crucial for ensuring that pip
+#   installs the CPU-only version of PyTorch and torchvision but cannot be included directly in the requirements.txt.
+#   You'll need to add this flag when installing via pip or use an environment manager that allows specifying
+#   additional pip arguments.
+
+# For the GitHub repository installation:
+# This needs to be installed separately using:
+# pip install git+https://github.com/facebookresearch/segment-anything.git
+# Direct Git repository installations need to be handled outside the requirements.txt file.
+
+
+
+
+
+
+#conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+
+#git clone https://github.com/facebookresearch/segment-anything.git
+#pip install git+https://github.com/facebookresearch/segment-anything.git
+
+
+
+
+# work on windows
+
+#pip install reqs
+#conda install cuda ... 11.8
+#conda install pytorch torchvision torc....
+#install opencv-python == 4.6.0.66
+#pip install git+https://github.com/facebookresearch/segment-anything.git
+# do a env freeze? clone environment
+#pip freeze -l > requirements_recipix.txt 
+
+
+

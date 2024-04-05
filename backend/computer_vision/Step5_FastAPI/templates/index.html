@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+  <meta name="description" content="Frontend for FastAPI on Recipix project">
+  <meta name="keywords" content="HTML, CSS, JavaScript, FastAPI, computervision, machine learning, AI, recipes">
+  <meta name="author" content="Ivan Zepeda">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipix</title>
+     <link rel="stylesheet" href="../static/css/styles.css">
+
+</head>
+<body>
+<script src="../static/js/script.js"></script>
+
+<div id="spinnerOverlay">
+<!--    <div class="spinner"></div>-->
+    <div class="spinner-container" >
+    <img src="../static/imgs/icon1.png" class="icon icon1">
+    <img src="../static/imgs/icon2.png" class="icon icon2">
+    <img src="../static/imgs/icon3.png" class="icon icon3">
+    <img src="../static/imgs/icon4.png" class="icon icon4">
+</div>
+</div>
+<!--<a href="https://www.flaticon.com/free-icons/food" title="food icons">Food icons created by Freepik - Flaticon</a>-->
+
+
+    <h1><img src="../static/imgs/recipix_logo.png" style="width: 250px;height: 250px" class="center"/> </h1>
+
+<!-- Upload Photo Form -->
+<h2>Upload Photo</h2>
+<form action="http://127.0.0.1:8000/upload_photo/" method="post" enctype="multipart/form-data" class="uploadForm">
+    <input type="file" name="photo" accept="image/*" >
+    <br/>
+    <button type="submit">Upload Photo</button>
+</form>
+<h2>Enter Ingredients Manually</h2>
+<form action="http://127.0.0.1:8000/upload_text/" method="post" class="uploadForm">
+    List all ingredients separated by a comma!<br/>
+    <textarea name="text"></textarea>
+    <br/>
+
+    <button type="submit">Submit Text</button>
+</form>
+
+<div id="recipesSection" style="display: none;">
+<!--    style="display:none;"-->
+    <h3>Top Recipe</h3>
+    <p id="message"></p>
+    <h2 id="title"></h2>
+    <img id="recipeImage" src="" alt="Recipe Image" style="max-width: 400px; display: none;">
+    <h3 class="hidden_title">Ingredients</h3>
+    <p id="ingredients"></p>
+    <h3 class="hidden_title">Instructions</h3>
+    <p id="instructions"></p>
+
+    <h3 style="display: none;" id="other_recipees_title">Other Recipes</h3>
+    <ul id="otherRecipes"></ul>
+</div>
+
+
+
+
+
+</body>
+
+<!--# Made with <3-->
+<!--# by Ivan Zepeda-->
+<!--# github@ijzepeda-LC-->
+</html>
