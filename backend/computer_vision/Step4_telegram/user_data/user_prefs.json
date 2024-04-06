@@ -1,16 +1,11 @@
 {
     "ijzepeda": {
         "whitelist": [
-            "Generic Recipe 1"
+            "Generic Recipe 1",
+            "Onion Salmon"
         ],
         "blacklist": [
-            "Pineapple Pizza",
-            "Onion Salmon",
-            "Pepper Salmon II",
-            "Roasted Stuffed Pig",
-            "Lemon-Pepper Salmon II",
-            "Garlic Salmon",
-            "Pan Seared Salmon I"
+            "Pineapple Pizza"
         ],
         "diet": [
             "Non Vegan"

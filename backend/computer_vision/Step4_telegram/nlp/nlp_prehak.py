@@ -13,16 +13,16 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # AUthors: Mahakdeep KAur, Preet and Ivan Zepeda
 
 # PATHS
-RECIPES_PICKLE_PATH = './nlp/preprocessed_recipes.pkl'
-TAGGED_RECIPES_PATH = './nlp/tagged_recipes_df.csv'
-NLP_TOKENIZED_TEXT_CSV_PATH = './nlp/tokenized_text.csv'
+RECIPES_PICKLE_PATH = '../models/nlp/preprocessed_recipes.pkl'
+TAGGED_RECIPES_PATH = '../models/nlp/tagged_recipes_df.csv'
+NLP_TOKENIZED_TEXT_CSV_PATH = '../models/nlp/tokenized_text.csv'
 
 #TFIDF CACHED models
 import os
 import scipy.sparse as sp
 
-tfidf_matrix_path = './nlp/tfidf_matrix.npz'
-vectorizer_path = './nlp/tfidf_vectorizer.pkl'
+tfidf_matrix_path = '../models/nlp/tfidf_matrix.npz'
+vectorizer_path = '../models/nlp/tfidf_vectorizer.pkl'
 
 # Set All Recommendation Model Parameters
 NUM_TOPICS = 50  # Number of Topics to Extract from corpora

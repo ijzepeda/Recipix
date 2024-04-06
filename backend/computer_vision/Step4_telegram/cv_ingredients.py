@@ -14,7 +14,7 @@ print(torch.cuda.is_available())
 # Configuration and Model Paths
 FOOD_CLASSIF_MODEL = "../models/model_FOOD_24-03_23-36_LR0.001.h5"
 FOOD_CLASSIF_MODEL_CLASSES_FILE = "../models/model_FOOD_24-03_23-36_LR0.txt"
-SAM_CHECKPOINT = "models/sam_vit_h_4b8939.pth"
+SAM_CHECKPOINT = "../models/sam_vit_h_4b8939.pth" #not on ../ but ./
 
 SAM_CHECKPOINT_LOCAL = "C:\\Users\\ijzep\\_AI_\\CAPSTONE\\models\\sam_vit_h_4b8939.pth"
 
