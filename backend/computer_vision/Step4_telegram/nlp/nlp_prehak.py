@@ -2,53 +2,59 @@ import pandas as pd
 import numpy as np
 import re
 import string
-import multiprocessing as mp
 import spacy
-
+import time
 # Load the English model
 
 from functools import reduce
-from operator import add
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from itertools import repeat
 
 # AUthors: Mahakdeep KAur, Preet and Ivan Zepeda
 
+# PATHS
+RECIPES_PICKLE_PATH = './nlp/preprocessed_recipes.pkl'
+TAGGED_RECIPES_PATH = './nlp/tagged_recipes_df.csv'
+NLP_TOKENIZED_TEXT_CSV_PATH = './nlp/tokenized_text.csv'
+
+#TFIDF CACHED models
+import os
+import scipy.sparse as sp
+
+tfidf_matrix_path = './nlp/tfidf_matrix.npz'
+vectorizer_path = './nlp/tfidf_vectorizer.pkl'
 
 # Set All Recommendation Model Parameters
-N_topics = 50  # Number of Topics to Extract from corpora
-N_top_docs = 200  # Number of top documents within each topic to extract keywords
-N_top_words = 25  # Number of keywords to extract from each topic
-N_docs_categorized = 2000  # Number of top documents within each topic to tag
-N_neighbor_window = 4  # Length of word-radius that defines the neighborhood for
+NUM_TOPICS = 50  # Number of Topics to Extract from corpora
+NUM_TOP_DOCS = 200  # Number of top documents within each topic to extract keywords
+NUM_TOP_WORDS = 25  # Number of keywords to extract from each topic
+NUM_DOCS_CATEGORIZED = 2000  # Number of top documents within each topic to tag
+NUM_NEIGHBOR_WINDOW = 4  # Length of word-radius that defines the neighborhood for
 # each word in the TextRank adjacency table
 
 # Query Similarity Weights
-w_title = 0.2
-w_text = 0.3
-w_categories = 0.5
-w_array = np.array([w_title, w_text, w_categories])
+WEIGHT_TITLE = 0.2
+WEIGHT_TEXT = 0.3
+WEIGTH_CATEGORIES = 0.5
+WEIGHT_ARRAY = np.array([WEIGHT_TITLE, WEIGHT_TEXT, WEIGTH_CATEGORIES])
 
 # Query Similarity Weights
-w_title = .2
-w_text = .3
-w_categories = .5
+WEIGHT_TITLE = .2
+WEIGHT_TEXT = .3
+WEIGTH_CATEGORIES = .5
 
-# Recipe Stopwords: for any high volume food recipe terminology that doesn't contribute
-# to the searchability of a recipe. This list must be manually created.
-recipe_stopwords = ['cup', 'cups', 'ingredient', 'ingredients', 'teaspoon', 'teaspoons', 'tablespoon',
-                    'tablespoons', 'C', 'F']
+# some stopwords that may affect the recipes
+recipe_stopwords = [ 'C', 'F','ingredient', 'ingredients', 'cup', 'cups',
+                    'tablespoons','teaspoons',  'teaspoon', 'tablespoon']
 
 # nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 
 
+# GLOBAL variables wo use with Singleton
 recipes = None
 text_tfidf = None
 title_tfidf = None
 tags_tfidf = None
-# all_text = None
-# root_text_data = None
 vectorizer = None
 
 nlp = None
@@ -65,49 +71,96 @@ class NLPModel:
 
     @classmethod
     def _initialize(cls):
+        """Loading files, instead of processing reduces 31 seconds of processing"""
+        start_time =time.time()
         # Load pickles and CSVs
-        cls.recipes = pd.read_pickle('./nlp/preprocessed_recipes.pkl')
+        cls.recipes = pd.read_pickle(RECIPES_PICKLE_PATH)
 
-        # Clean ingredients
-        ingredients = []
-        for ing_list in cls.recipes['ingredients']:
-            clean_ings = [ing.replace('ADVERTISEMENT', '').strip() for ing in ing_list]
-            if '' in clean_ings:
-                clean_ings.remove('')
-            ingredients.append(clean_ings)
-        cls.recipes['ingredients'] = ingredients
+        # # Clean ingredients
+        # ingredients = []
+        # for ing_list in cls.recipes['ingredients']:
+        #     # TEST PREVIOUS STEP
+        #     for ing in ing_list:
+        #         if "ADVERTISEMENT" in ing:
+        #             print(" EN LOS INGREDIENTES DE RECIPES en el pickle hay advertisemnt", ing)
+        #     clean_ings = [ing.replace('ADVERTISEMENT', '').strip() for ing in ing_list]
+        #
+        #     if '' in clean_ings:
+        #         clean_ings.remove('')
+        #     ingredients.append(clean_ings)
+        # cls.recipes['ingredients'] = ingredients
+        # cls.recipes['ingredient_text'] = ['; '.join(ingredients) for ingredients in cls.recipes['ingredients']]
+        # cls.recipes['ingredient_count'] = [len(ingredients) for ingredients in cls.recipes['ingredients']]
+        # # Overwrite the original pickle with the cleaned version
+        # cls.recipes.to_pickle(RECIPES_PICKLE_PATH)
 
-        cls.recipes['ingredient_text'] = ['; '.join(ingredients) for ingredients in cls.recipes['ingredients']]
-        cls.recipes['ingredient_count'] = [len(ingredients) for ingredients in cls.recipes['ingredients']]
+        # Save new version of pickle with changes
+        print("Preprocesamiento de pickle tomo:", round(time.time() - start_time, 2), "seconds") #14secs-18->>> 0.47
 
-        # cls.all_text = cls.recipes['title'] + ' ' + cls.recipes['ingredient_text'] + ' ' + cls.recipes['instructions'] #is this being used?
 
+
+
+        start_time = time.time()
         # Initialize NLP model
         cls.nlp = spacy.load('en_core_web_sm', disable=["parser", "ner"])
+        print("Preprocesamiento de Spacy tomo:", round(time.time() - start_time, 2), "seconds") #.42 secs-.3
 
-        cls.recipes_csv = pd.read_csv('./nlp/tagged_recipes_df.csv')
-        cls.recipes_csv['tag_list'] = cls.recipes_csv['tag_list'].apply(
-            lambda x: x.split(',') if isinstance(x, str) else [])
-        cls.recipes_csv['tags'] = [' '.join(tags) for tags in cls.recipes_csv['tag_list']]
 
-        # Creating TF-IDF Matrices
-        tokenized_text = pd.read_csv('./nlp/tokenized_text.csv')['0']
-        cls.vectorizer = TfidfVectorizer(lowercase=True, ngram_range=(1, 1))
-        cls.text_tfidf = cls.vectorizer.fit_transform(tokenized_text)
-        cls.title_tfidf = cls.vectorizer.transform(cls.recipes_csv['title'])
-        cls.tags_tfidf = cls.vectorizer.transform(cls.recipes_csv['tags'])
+
+        start_time = time.time()
+        cls.recipes_csv = pd.read_csv(TAGGED_RECIPES_PATH)
+        # cls.recipes_csv['tag_list'] = cls.recipes_csv['tag_list'].apply(
+        #     lambda x: x.split(',') if isinstance(x, str) else [])
+        # cls.recipes_csv['tags'] = [' '.join(tags) for tags in cls.recipes_csv['tag_list']]
+        # # # Overwrite the original CSV with the processed version
+        # cls.recipes_csv.to_csv(TAGGED_RECIPES_PATH, index=False)
+        print("Preprocesamiento de CSV tomo:", round(time.time() - start_time, 2), "segundos") #11 secs-3.12 ->>2.26
+
+
+
+        start_time = time.time()
+        # # Creating TF-IDF Matrices
+        # tokenized_text = pd.read_csv(NLP_TOKENIZED_TEXT_CSV_PATH)['0']
+        # cls.vectorizer = TfidfVectorizer(lowercase=True, ngram_range=(1, 1))
+        # cls.text_tfidf = cls.vectorizer.fit_transform(tokenized_text)
+        # cls.title_tfidf = cls.vectorizer.transform(cls.recipes_csv['title'])
+        # cls.tags_tfidf = cls.vectorizer.transform(cls.recipes_csv['tags'])
+        # print("Preprocesamiento de TFIDF tomo:", round(time.time() - start_time, 2), "segundos") #11.3 secs
+        #
+        # print("cls.recipes_csv['title'] has NaN",cls.recipes_csv['title'].isna().sum())
+        # print("cls.recipes_csv['tags'] has NaN",cls.recipes_csv['tags'].isna().sum()) # This has 46862 NaNs
+
+        cls.recipes_csv['title'] = cls.recipes_csv['title'].fillna('')
+        cls.recipes_csv['tags'] = cls.recipes_csv['tags'].fillna('')
+
+
+        # Check if the TF-IDF matrices and vectorizer exist
+        if os.path.exists(tfidf_matrix_path) and os.path.exists(vectorizer_path):
+            # Load the TF-IDF matrices and vectorizer
+            cls.vectorizer = pd.read_pickle(vectorizer_path)
+            cls.text_tfidf = sp.load_npz(tfidf_matrix_path)
+            cls.title_tfidf = cls.vectorizer.transform(cls.recipes_csv['title'])
+            cls.tags_tfidf = cls.vectorizer.transform(cls.recipes_csv['tags'])
+            print("Loaded TF-IDF matrices from disk.")
+        else:
+            # Creating TF-IDF Matrices because they don't exist or need to be updated
+            start_time = time.time()
+            tokenized_text = pd.read_csv(NLP_TOKENIZED_TEXT_CSV_PATH)['0']
+            cls.vectorizer = TfidfVectorizer(lowercase=True, ngram_range=(1, 1))
+            cls.text_tfidf = cls.vectorizer.fit_transform(tokenized_text)
+
+            cls.title_tfidf = cls.vectorizer.transform(cls.recipes_csv['title'])
+            cls.tags_tfidf = cls.vectorizer.transform(cls.recipes_csv['tags'])
+            # Save the computed TF-IDF matrix and vectorizer for future use
+            pd.to_pickle(cls.vectorizer, vectorizer_path)
+            sp.save_npz(tfidf_matrix_path, cls.text_tfidf)
+
+        print("Preprocessing of TF-IDF took:", round(time.time() - start_time, 2), "seconds") #11.3 secs -> 3.14
 
 
 def init_nlp():
     nlp_model = NLPModel()  # This will initialize the model and data if not already done
-    # return nlp_model #este no estaba
-    # global recipes, text_tfidf, title_tfidf, tags_tfidf, all_text, vectorizer, nlp
-    # global vectorizer
-    # recipes, text_tfidf, title_tfidf, tags_tfidf, all_text, vectorizer, nlp = nlp_model.recipes, nlp_model.text_tfidf, nlp_model.title_tfidf, nlp_model.tags_tfidf, nlp_model.all_text, nlp_model.vectorizer, nlp_model.nlp
-    # vectorizer=nlp_model.vectorizer
     return nlp_model
-    # return  nlp_model.recipes, nlp_model.text_tfidf, nlp_model.title_tfidf, nlp_model.tags_tfidf, nlp_model.all_text, nlp_model.vectorizer, nlp_model.nlp
-
 
 def clean_text(documents):
     cleaned_text = []
@@ -126,13 +179,6 @@ def text_tokenizer_mp(doc):
     return tok_doc
 
 
-# def topic_docs_4kwsummary(topic_document_scores, root_text_data):
-#     '''Gathers and formats the top recipes in each topic'''
-#     text_index = pd.Series(topic_document_scores).sort_values(ascending=False)[:N_top_docs].index
-#     text_4kwsummary = pd.Series(root_text_data)[text_index]
-#     return text_4kwsummary
-
-
 def generate_filter_kws(text_list):
     '''Filters out specific parts of speech and stop words from the list of potential keywords'''
     parsed_texts = nlp(' '.join(text_list))
@@ -147,7 +193,7 @@ def generate_adjacency(kw_filts, parsed_texts):
     adjacency = pd.DataFrame(columns=kw_filts, index=kw_filts, data=0)
     for i, word in enumerate(parsed_texts):
         if any([str(word) == item for item in kw_filts]):
-            end = min(len(parsed_texts), i + N_neighbor_window + 1)  # Neighborhood Window Utilized Here
+            end = min(len(parsed_texts), i + NUM_NEIGHBOR_WINDOW + 1)  # Neighborhood Window Utilized Here
             nextwords = parsed_texts[i + 1:end]
             inset = [str(x) in kw_filts for x in nextwords]
             neighbors = [str(nextwords[i]) for i in range(len(nextwords)) if inset[i]]
@@ -157,7 +203,7 @@ def generate_adjacency(kw_filts, parsed_texts):
 
 
 def generate_kw_index(topic_document_scores):
-    kw_index = pd.Series(topic_document_scores).sort_values(ascending=False)[:N_docs_categorized].index
+    kw_index = pd.Series(topic_document_scores).sort_values(ascending=False)[:NUM_DOCS_CATEGORIZED].index
     return kw_index
 
 
@@ -186,9 +232,9 @@ def ranked_query(query):
 def overall_scores(query_vector):
     '''Calculates Query Similarity Scores against recipe title, instructions, and keywords.
     Then returns weighted averages of similarities for each recipe.'''
-    final_scores = nlp_model.title_tfidf * query_vector.T * w_title
-    final_scores += nlp_model.text_tfidf * query_vector.T * w_text
-    final_scores += nlp_model.tags_tfidf * query_vector.T * w_categories
+    final_scores = nlp_model.title_tfidf * query_vector.T * WEIGHT_TITLE
+    final_scores += nlp_model.text_tfidf * query_vector.T * WEIGHT_TEXT
+    final_scores += nlp_model.tags_tfidf * query_vector.T * WEIGTH_CATEGORIES
     return final_scores
 
 

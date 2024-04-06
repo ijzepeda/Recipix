@@ -4,7 +4,10 @@
             "Generic Recipe 1"
         ],
         "blacklist": [
-            "Pineapple Pizza"
+            "Pineapple Pizza",
+            "Onion Salmon",
+            "Pepper Salmon II",
+            "Roasted Stuffed Pig"
         ],
         "diet": [
             "Non Vegan"
