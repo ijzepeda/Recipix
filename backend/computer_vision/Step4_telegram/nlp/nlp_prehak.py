@@ -72,67 +72,16 @@ class NLPModel:
     @classmethod
     def _initialize(cls):
         """Loading files, instead of processing reduces 31 seconds of processing"""
-        start_time =time.time()
         # Load pickles and CSVs
         cls.recipes = pd.read_pickle(RECIPES_PICKLE_PATH)
 
-        # # Clean ingredients
-        # ingredients = []
-        # for ing_list in cls.recipes['ingredients']:
-        #     # TEST PREVIOUS STEP
-        #     for ing in ing_list:
-        #         if "ADVERTISEMENT" in ing:
-        #             print(" EN LOS INGREDIENTES DE RECIPES en el pickle hay advertisemnt", ing)
-        #     clean_ings = [ing.replace('ADVERTISEMENT', '').strip() for ing in ing_list]
-        #
-        #     if '' in clean_ings:
-        #         clean_ings.remove('')
-        #     ingredients.append(clean_ings)
-        # cls.recipes['ingredients'] = ingredients
-        # cls.recipes['ingredient_text'] = ['; '.join(ingredients) for ingredients in cls.recipes['ingredients']]
-        # cls.recipes['ingredient_count'] = [len(ingredients) for ingredients in cls.recipes['ingredients']]
-        # # Overwrite the original pickle with the cleaned version
-        # cls.recipes.to_pickle(RECIPES_PICKLE_PATH)
-
-        # Save new version of pickle with changes
-        print("Preprocesamiento de pickle tomo:", round(time.time() - start_time, 2), "seconds") #14secs-18->>> 0.47
-
-
-
-
-        start_time = time.time()
         # Initialize NLP model
         cls.nlp = spacy.load('en_core_web_sm', disable=["parser", "ner"])
-        print("Preprocesamiento de Spacy tomo:", round(time.time() - start_time, 2), "seconds") #.42 secs-.3
 
-
-
-        start_time = time.time()
         cls.recipes_csv = pd.read_csv(TAGGED_RECIPES_PATH)
-        # cls.recipes_csv['tag_list'] = cls.recipes_csv['tag_list'].apply(
-        #     lambda x: x.split(',') if isinstance(x, str) else [])
-        # cls.recipes_csv['tags'] = [' '.join(tags) for tags in cls.recipes_csv['tag_list']]
-        # # # Overwrite the original CSV with the processed version
-        # cls.recipes_csv.to_csv(TAGGED_RECIPES_PATH, index=False)
-        print("Preprocesamiento de CSV tomo:", round(time.time() - start_time, 2), "segundos") #11 secs-3.12 ->>2.26
-
-
-
-        start_time = time.time()
-        # # Creating TF-IDF Matrices
-        # tokenized_text = pd.read_csv(NLP_TOKENIZED_TEXT_CSV_PATH)['0']
-        # cls.vectorizer = TfidfVectorizer(lowercase=True, ngram_range=(1, 1))
-        # cls.text_tfidf = cls.vectorizer.fit_transform(tokenized_text)
-        # cls.title_tfidf = cls.vectorizer.transform(cls.recipes_csv['title'])
-        # cls.tags_tfidf = cls.vectorizer.transform(cls.recipes_csv['tags'])
-        # print("Preprocesamiento de TFIDF tomo:", round(time.time() - start_time, 2), "segundos") #11.3 secs
-        #
-        # print("cls.recipes_csv['title'] has NaN",cls.recipes_csv['title'].isna().sum())
-        # print("cls.recipes_csv['tags'] has NaN",cls.recipes_csv['tags'].isna().sum()) # This has 46862 NaNs
 
         cls.recipes_csv['title'] = cls.recipes_csv['title'].fillna('')
         cls.recipes_csv['tags'] = cls.recipes_csv['tags'].fillna('')
-
 
         # Check if the TF-IDF matrices and vectorizer exist
         if os.path.exists(tfidf_matrix_path) and os.path.exists(vectorizer_path):
@@ -144,7 +93,6 @@ class NLPModel:
             print("Loaded TF-IDF matrices from disk.")
         else:
             # Creating TF-IDF Matrices because they don't exist or need to be updated
-            start_time = time.time()
             tokenized_text = pd.read_csv(NLP_TOKENIZED_TEXT_CSV_PATH)['0']
             cls.vectorizer = TfidfVectorizer(lowercase=True, ngram_range=(1, 1))
             cls.text_tfidf = cls.vectorizer.fit_transform(tokenized_text)
@@ -155,7 +103,6 @@ class NLPModel:
             pd.to_pickle(cls.vectorizer, vectorizer_path)
             sp.save_npz(tfidf_matrix_path, cls.text_tfidf)
 
-        print("Preprocessing of TF-IDF took:", round(time.time() - start_time, 2), "seconds") #11.3 secs -> 3.14
 
 
 def init_nlp():
@@ -259,15 +206,6 @@ class Recipe:
 
 def filter_recipe(recipe, user_prefs):
     # discard by allergies
-
-    print("Checando si el usuario es alergico")
-    print("ingredientes completos: ", recipe['ingredients'])
-    # for ing in user_prefs['allergies']:
-    #     print(f"Alergico: {ing}, ")
-    #     if ing in recipe['ingredients']:
-    #         print("user is allergic to:", ing, "discarding recipe",recipe['title'])
-    #         return False
-    # Assuming recipe['ingredients'] is a list of strings (each string is an ingredient)
     for ing in user_prefs['allergies']:
         lower_allergen = ing.lower()
         for ingredient in recipe['ingredients']:
@@ -278,24 +216,11 @@ def filter_recipe(recipe, user_prefs):
 
     # discard by blacklist
     if recipe['title'] in user_prefs['blacklist']:
-        print("This recipe is blacklisted", recipe['title'])
+        print("This recipe is blacklisted", recipe['title'])  #Verifica que se guarde igual que en la base de datos, Lemon-Pepper != Lemon Pepper
         return False
     return True
 
 
-# def print_recipes(index, query, recipe_range):
-#     '''Prints recipes according to query similarity ranks and saves them as Recipe objects.'''
-#     recipe_objects = {}
-#     print('Search Query: {}\n'.format(query))
-#     for i, idx in enumerate(index, start=recipe_range[0]):
-#         title = nlp_model.recipes.loc[idx, 'title']
-#         ingredients = nlp_model.recipes.loc[idx, 'ingredient_text']
-#         instructions = nlp_model.recipes.loc[idx, 'instructions']
-#         rank = i + 1
-#         # Create a Recipe object and store it in the dictionary with rank as the key
-#         recipe_obj = Recipe(title, ingredients, instructions, rank)
-#         recipe_objects[rank] = recipe_obj
-#     return recipe_objects
 
 def print_recipes(index, query, recipe_range, user_prefs=None):
     '''Prints recipes according to query similarity ranks and saves them as Recipe objects.'''

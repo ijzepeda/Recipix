@@ -207,8 +207,8 @@ async def send_final_responses(update, pdf_path, start_time, title=""):
 
     # like or not?
     keyboard = [
-        [InlineKeyboardButton("👍 Like", callback_data=f'like-{title}'),
-         InlineKeyboardButton("👎 Dislike", callback_data=f'dislike-{title}')]
+        [InlineKeyboardButton("👍 Like", callback_data=f'like::{title}'),
+         InlineKeyboardButton("👎 Dislike", callback_data=f'dislike::{title}')]
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -223,7 +223,7 @@ async def button(update: Update, context: CallbackContext) -> None:
     # This makes the bot edit the message with the button that was clicked to acknowledge the action.
     await query.answer()
     print("You pressed!!!", query.data)
-    recipe_title = query.data.split('-')[-1].strip()
+    recipe_title = query.data.split('::')[-1].strip()   # racipes with dashes will be saved wrong
     if query.data.startswith("like"):
         # save to ./user_data/user_prefs.json
         message = f"We are glad you like {recipe_title}"
