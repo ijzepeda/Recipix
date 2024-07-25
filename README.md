@@ -2,11 +2,8 @@
 [![license](https://img.shields.io/badge/License-blue)](LICENSE)
 
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)]([(https://github.com/ijzepeda-LC/ai_capstone/issues)])
-[![made with hearth by Preet](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-Preet-ff1414.svg?style=flat-square)](https://github.com/git-preet)
 [![made with hearth by Ivan](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-Ivan-ff1414.svg?style=flat-square)](https://github.com/ijzepeda-LC)
 [![made with hearth by Erwin](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-Erwin-ff1414.svg?style=flat-square)](https://github.com/gelnomo)
-[![made with hearth by Mahakdeep](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-Mahakdeep-ff1414.svg?style=flat-square)](https://github.com/mahakdeepkaur)
-[![made with hearth by Aparna](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-Aparna-ff1414.svg?style=flat-square)](https://github.com/AparnaVinit)
 [![made with hearth by Camilo](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-Camilo-ff1414.svg?style=flat-square)](https://github.com/ceflorezrojas
 )
 
